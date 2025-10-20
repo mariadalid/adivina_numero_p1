@@ -11,7 +11,7 @@ import random
 import json
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 DATA_FILE="data.json"
 
