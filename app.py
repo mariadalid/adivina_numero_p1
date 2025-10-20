@@ -6,7 +6,7 @@
 # Darío Emiliano
 
 #Importaciones y configuración básica - Fernando
-from flask import Flask, render_html, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import random
 import json
 import os
@@ -45,7 +45,7 @@ def nuevo_numero():
 @app.route('/')
 def index():
     datos = cargar_datos()
-    return render_html('index.html', puntos=datos["puntos"], intentos=datos["intentos"])
+    return render_template('index.html', puntos=datos["puntos"], intentos=datos["intentos"])
 
 #Ruta /adivinar - Alexis y Angeles
 @app.route('/adivinar', methods=['POST'])
@@ -64,7 +64,7 @@ def adivinar():
         nuevo_numero()
 
     guardar_datos(datos)
-    return render_html('resultado.html', mensaje=mensaje, puntos=datos["puntos"], intentos=datos["intentos"])
+    return render_template('resultado.html', mensaje=mensaje, puntos=datos["puntos"], intentos=datos["intentos"])
 
 #Ruta /reiniciar y ejecución del servidor
 @app.route('/reiniciar')
