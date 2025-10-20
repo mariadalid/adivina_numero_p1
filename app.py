@@ -46,3 +46,24 @@ return datos
 def index():
     datos = cargar_datos()
     return render_template('index.html', puntos=datos["puntos"], intentos=datos["intentos"])
+
+#Ruta /adivinar - Alexis y Angeles
+@app.route('/adivinar', methods=['POST'])
+def adivinar():
+    datos = cargar_datos()
+    numero_usuario = int(request.form['numero'])
+    numero_correcto = datos["numero"]
+    datos["intentos"] += 1
+
+    if numero_usuario == numero_correcto:
+        datos["puntos"] += 100
+        mensaje = f"¡Adivinaste! El número era {numero_correcto}. +100 puntos"
+        nuevo_numero()
+    else:
+        mensaje = f"No era {numero_usuario}. El número correcto era {numero_correcto}."
+        nuevo_numero()
+
+    guardar_datos(datos)
+    return render_template('resultado.html', mensaje=mensaje, puntos=datos["puntos"], intentos=datos["intentos"])
+
+
