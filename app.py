@@ -40,3 +40,9 @@ def nuevo_numero():
     datos["numero"] = random.randint(1, 100)
     guardar_datos(datos)
 return datos
+
+#Ruta principal (/) - Jesús
+@app.route('/')
+def index():
+    datos = cargar_datos()
+    return render_template('index.html', puntos=datos["puntos"], intentos=datos["intentos"])
