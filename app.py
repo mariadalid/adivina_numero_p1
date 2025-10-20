@@ -66,4 +66,12 @@ def adivinar():
     guardar_datos(datos)
     return render_template('resultado.html', mensaje=mensaje, puntos=datos["puntos"], intentos=datos["intentos"])
 
+#Ruta /reiniciar y ejecución del servidor
+@app.route('/reiniciar')
+def reiniciar():
+    reiniciar_juego()
+    return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
