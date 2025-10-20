@@ -39,7 +39,7 @@ def nuevo_numero():
     datos = cargar_datos()
     datos["numero"] = random.randint(1, 100)
     guardar_datos(datos)
-return datos
+    return datos
 
 #Ruta principal (/) - Jesús
 @app.route('/')
