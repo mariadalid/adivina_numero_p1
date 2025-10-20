@@ -1,0 +1,18 @@
+DOCTYPE html>
+ <!-- Página /Resultado Alexis, Fernando, Jesus y Dario-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ mensaje }}</h1>
+        <p>Intentos: {{ intentos }}</p>
+        <p>Puntos actuales: {{ puntos }}</p>
+        <a href="/"><button>Intentar de nuevo</button></a>
+        <a href="/reiniciar"><button>Reiniciar juego</button></a>
+    </div>
+</body>
+</html>

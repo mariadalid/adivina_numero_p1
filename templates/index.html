@@ -1,0 +1,26 @@
+<!-- Estructura base del documento - Dario y Jesus -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el número</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Adivina el número (1 al 100)</h1>
+        
+        <!-- Formulario y conexión con Flask -Alexis y Fernando-->
+
+        <form action="/adivinar" method="POST">
+            <input type="number" name="numero" placeholder="Escribe un número..." min="1" max="100" required>
+            <button type="submit">Probar suerte</button>
+        </form>
+    
+        <p>Intentos: {{ intentos }}</p>
+        <p>Puntos actuales: {{ puntos }}</p>
+        <a href="/reiniciar"><button>Reiniciar juego</button></a>
+    </div>
+</body>
+</html>
