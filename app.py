@@ -24,3 +24,19 @@ def cargar_datos():
         with open(DATA_FILE, "r") as f:
             datos = json.load(f)
     return datos
+
+#Funciones para manejar el juego - Adalid y Fernando
+def guardar_datos(datos):
+    with open(DATA_FILE, "w") as f:
+        json.dump(datos, f)
+
+def reiniciar_juego():
+    datos = {"puntos": 0, "intentos": 0, "numero": random.randint(1, 100)}
+    guardar_datos(datos)
+    return datos
+
+def nuevo_numero():
+    datos = cargar_datos()
+    datos["numero"] = random.randint(1, 100)
+    guardar_datos(datos)
+return datos
