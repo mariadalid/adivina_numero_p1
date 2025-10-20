@@ -14,3 +14,13 @@ import os
 app = Flask(_name_)
 
 DATA_FILE="data.json"
+
+#Función cargar_datos() - Dario
+def cargar_datos():
+    if not os.path.exists(DATA_FILE):
+        datos = {"puntos": 0, "intentos": 0, "numero": random.randint(1, 100)}
+        guardar_datos(datos)
+    else:
+        with open(DATA_FILE, "r") as f:
+            datos = json.load(f)
+    return datos
