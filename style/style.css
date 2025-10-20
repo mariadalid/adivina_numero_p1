@@ -1,0 +1,41 @@
+/*Angeles y Adalid*/
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  background: white;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+input {
+  padding: 8px;
+  margin: 10px;
+  width: 60%;
+}
+
+button, .btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover {
+  background-color: #217dbb;
+}
+
+.resultado {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
